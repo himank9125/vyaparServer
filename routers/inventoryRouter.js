@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/add", AuthLog, async (req, res) => {
   try {
     const userId = req.userId;
-    const { name, hsn, stock, batch, rate } = req.body;
+    const { name, hsn, stock, batch, rate, expiry } = req.body;
     const data = await inventoryModel.create({
       name,
       hsn,
